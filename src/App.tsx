@@ -3,7 +3,7 @@ import { MainRoutes } from "./routes/MainRoutes";
 const App = ()=>{
 	return (
 		<div>
-			<div className="font-bold text-2xl mb-4">Galeria de fotos</div>
+			<div className="font-bold text-2xl m-4">Galeria de fotos</div>
 			<MainRoutes/>
 		</div>
 	)

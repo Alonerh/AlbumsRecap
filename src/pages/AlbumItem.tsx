@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams, useNavigate, Link } from "react-router-dom"
 import { api } from "../api";
 import { useEffect, useState } from "react";
 import { Albums } from "../types/Album";
@@ -28,16 +28,20 @@ export const AlbumItem = ()=>{
 
     return (
         <div>
-            Filtro: 
-            <div>Página sobre albúm número {params.slug}</div>
-            <button onClick={()=>navigate(-1)}>Voltar</button>
+            <div className="m-3">Página sobre albúm número {params.slug}</div>
+            <button 
+                onClick={()=>navigate(-1)}
+                className="m-2 p-2 bg-blue-400 rounded-full"
+            >Voltar</button>
             <div>
-                <div>
+                <div className="m-3 font-bold text-2xl">
                     {albumsPhotos?.title}
                 </div>
-                <div className="p-4 flex flex-wrap">
+                <div className="p-4 flex flex-wrap justify-center">
                     {photos.map((item, index)=>(
-                        <img src={item.thumbnailUrl} key={index}/>
+                        <Link to={`/photo/${item.id}`} key={index}>
+                            <img src={item.thumbnailUrl} className="p-3 border"/>
+                        </Link>
                     ))}
                 </div>
             </div>

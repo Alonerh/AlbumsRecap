@@ -18,5 +18,9 @@ export const api = {
     getAllPhotos: async(params:string | undefined)=>{
         let response = await axiosInstance.get(`${BASE}/albums/${params}/photos`);
         return response.data;
+    },
+    getLastPhoto: async(params: string | undefined)=>{
+        let response = await axiosInstance.get(`${BASE}/photos/${params}`);
+        return response.data;
     }
 }
