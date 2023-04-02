@@ -23,7 +23,6 @@ export const Home = ()=>{
 
     return (
         <div className="p-4">
-			<div className="font-bold text-2xl mb-4">Galeria de fotos</div>
 			<div className="container">
 
 				{loading &&

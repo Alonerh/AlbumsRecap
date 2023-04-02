@@ -10,5 +10,13 @@ export const api = {
     getAllAlbums: async () => {
         let response = await axiosInstance.get(`${BASE}/albums`);
         return response.data;
+    },
+    getAllAlbumsPhotos: async (params:string | undefined)=>{
+        let response = await axiosInstance.get(`${BASE}/albums/${params}`);
+        return response.data;
+    },
+    getAllPhotos: async(params:string | undefined)=>{
+        let response = await axiosInstance.get(`${BASE}/albums/${params}/photos`);
+        return response.data;
     }
 }
